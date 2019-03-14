@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Adhitya Utomo - Exercise 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <style>
+        .main{
+            padding-left: 15%;
+            padding-right: 15%;
+            background: cyan;
+            min-height: 700px;
+            width: 100%;
+        }
+        .sub-main{
+            background: white;
+        }
+        .in-main{
+            margin-bottom: 20px;
+            padding: 25px;
+        }
+        .main-form{
+            padding-bottom: 30px;
+        }
+    </style>
+    <body style="font-family: 'Comic Sans MS', cursive, sans-serif;">
+        <div class="main">
+            <div class="sub-main">
+                <div class="in-main" style="text-align:center;">
+                    <h1 style="margin-top:unset;">Calculator</h1>
+                    <h4><em>This is my second exercise project</em></h4>
+                </div>
+                <div class="in-main" style="background: antiquewhite;margin-bottom:unset;min-height: 600px;">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="height:150px;border: 1px solid black;">
+                                    <div style="padding:10px;">
+                                        <span id="hasil2">0</span>
+                                    </div>
+                                    <div style="padding:10px;">
+                                        <span id="hasil1">0</span>
+                                    </div>
+                                </div>   
+                            </div>
+                            <div class="col-md-12">
+                                <div style="height:250px;border: 1px solid black;">
+                                    <div style="padding:10px;">
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(1)" type="button" value="1">1</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(2)" type="button" value="2">2</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(3)" type="button" value="3">3</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(4)" type="button" value="4">4</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(5)" type="button" value="5">5</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(6)" type="button" value="6">6</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(7)" type="button" value="7">7</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(8)" type="button" value="8">8</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(9)" type="button" value="9">9</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="pencet(0)" type="button" value="0">0</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="fungsi('+')" type="button">+</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="fungsi('-')" type="button">-</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="fungsi('*')" type="button">*</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="fungsi('/')" type="button">/</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="hasil()" type="button">=</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default" onclick="clears()" type="button">CA</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            function pencet(nilai){
+                // var label = document.getElementById('hasil1').innerHTML;
+                // var format_label = parseInt(label+nilai)
+                // document.getElementById('hasil1').innerHTML = format_label;
+                var label = document.getElementById('hasil1').innerHTML;
+                if(label == 0){
+                    document.getElementById('hasil1').innerHTML = nilai;
+                }else{
+                    document.getElementById('hasil1').innerHTML += nilai;
+                }
+            }
+
+            function fungsi(nilai){
+                // console.log(nilai);
+                var label = document.getElementById('hasil1').innerHTML;
+                document.getElementById('hasil1').innerHTML = label+nilai;
+            }
+
+            function hasil(){
+                var label = document.getElementById('hasil1').innerHTML;
+                document.getElementById('hasil2').innerHTML = eval(label);
+            }
+
+            function clears(){
+                document.getElementById('hasil2').innerHTML = 0;
+                document.getElementById('hasil1').innerHTML = 0;
+                // document.querySelector('span').textContent = 0;
+            }
+        </script>
+    </body>
+</html>
