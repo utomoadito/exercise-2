@@ -49,16 +49,16 @@
                             <div class="col-md-12">
                                 <div style="height:320px;border: 1px solid black;">
                                     <div style="padding:10px;">
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(1)" type="button" value="1">1</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(2)" type="button" value="2">2</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(3)" type="button" value="3">3</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(4)" type="button" value="4">4</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(5)" type="button" value="5">5</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(6)" type="button" value="6">6</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(7)" type="button" value="7">7</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(8)" type="button" value="8">8</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(9)" type="button" value="9">9</button></div>
-                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(0)" type="button" value="0">0</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(1);hasil();" type="button" value="1">1</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(2);hasil();" type="button" value="2">2</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(3);hasil();" type="button" value="3">3</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(4);hasil();" type="button" value="4">4</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(5);hasil();" type="button" value="5">5</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(6);hasil();" type="button" value="6">6</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(7);hasil();" type="button" value="7">7</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(8);hasil();" type="button" value="8">8</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(9);hasil();" type="button" value="9">9</button></div>
+                                        <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="pencet(0);hasil();" type="button" value="0">0</button></div>
                                         <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="fungsi('+')" type="button">+</button></div>
                                         <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="fungsi('-')" type="button">-</button></div>
                                         <div class="col-md-4" style="margin-bottom:10px;"><button class="btn btn-default btn-block" onclick="fungsi('*')" type="button">*</button></div>
@@ -90,24 +90,20 @@
                     document.getElementById('hasil1').innerHTML += nilai;
                 }
             }
-
             function fungsi(nilai){
                 // console.log(nilai);
                 var label = document.getElementById('hasil1').innerHTML;
                 document.getElementById('hasil1').innerHTML = label+nilai;
             }
-
             function hasil(){
                 var label = document.getElementById('hasil1').innerHTML;
                 document.getElementById('hasil2').innerHTML = eval(label);
             }
-
             function clears(){
                 document.getElementById('hasil2').innerHTML = 0;
                 document.getElementById('hasil1').innerHTML = 0;
                 // document.querySelector('span').textContent = 0;
             }
-
             function backspace(){
                 var label = document.getElementById('hasil1').innerHTML;
                 document.getElementById('hasil1').innerHTML = label.substr(0, label.length - 1); //kalau 0 ditingkatkan maka angka yg dikurang dimulai dari kiri
